@@ -1,11 +1,13 @@
 name: Docker Build
 
 on:
-  workflow_call:
+  push:
+    branches: [main]
+  pull_request:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: slimanesidi/platform-demo
 
 jobs:
   build:
